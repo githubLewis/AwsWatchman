@@ -46,6 +46,7 @@ steps:
   inputs:
     sourceFolder: '$(Agent.BuildDirectory)'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
+    CleanTargetFolder: true
 
 - task: PublishBuildArtifacts@1
   inputs:
