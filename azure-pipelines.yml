@@ -44,7 +44,8 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: CopyFiles@2
   inputs:
-    sourceFolder: '$(Agent.BuildDirectory)'
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb|*.json)'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
     CleanTargetFolder: true
 
