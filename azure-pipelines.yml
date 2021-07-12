@@ -44,10 +44,11 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: CopyFiles@2
   inputs:
-    sourceFolder: '$(Build.SourcesDirectory)'
+    sourceFolder: '$(Build.SourcesDirectory)\Watchman'
     contents: '**/$(BuildConfiguration)/**/?(*.exe|*.dll|*.pdb|*.json)'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
     CleanTargetFolder: true
+    flattenFolders: true
 
 - task: PublishBuildArtifacts@1
   inputs:
